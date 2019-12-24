@@ -4,10 +4,6 @@ node_modules
 # Webpack build folder
 build
 
-# Output and typings folders for local npm packages
-dist
-declarations
-
 # happypack temporary cache
 .happypack
 
