@@ -4,6 +4,8 @@
   "description": "I is Wohf. Nice is meet you.",
   "main": "index.js",
   "scripts": {
+    "app": "node build/index.js",
+    "debug": "node --inspect-brk build/index.js",
     "build": "tsc",
     "build:watch": "tsc -w",
     "test": "echo \"Error: no test specified\" && exit 1"
