@@ -1,0 +1,23 @@
+{
+  "name": "wohfbot",
+  "version": "1.0.0",
+  "description": "I is Wohf. Nice is meet you.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jschen5/wohfbot.git"
+  },
+  "keywords": [
+    "wohf",
+    "chenfamfam"
+  ],
+  "author": "ChenFamFam",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jschen5/wohfbot/issues"
+  },
+  "homepage": "https://github.com/jschen5/wohfbot#readme"
+}
