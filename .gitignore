@@ -1,0 +1,23 @@
+node_modules
+.vscode/
+
+# Webpack build folder
+build
+
+# Output and typings folders for local npm packages
+dist
+declarations
+
+# happypack temporary cache
+.happypack
+
+# karma local config and report folders
+karma.local.conf.js
+karma-coverage
+
+# npm files
+npm-robocopy-log.txt
+package-lock.json
+
+tmp
+._*
