@@ -1,4 +1,5 @@
 import * as Discord from 'discord.js';
+import * as Markov from './markov';
 const discordConfig = require('../discord.json');
 
 const client = new Discord.Client();
@@ -16,7 +17,7 @@ client.on('message', async msg => {
         msg.reply('wohf pong');
     }
 
-    if (msg.content.match(/^fetch channels/)) {
+    if (msg.content.match(/^What would .+ say\??$/)) {
         const targetUser = msg.mentions.users.first();
         let allMessages = new Discord.Collection<string, Discord.Message>();
 
@@ -32,14 +33,25 @@ client.on('message', async msg => {
             });
             const msgsForUser = msgs.filter(m => m.author.id === targetUser.id);
             allMessages = allMessages.concat(msgsForUser);
-            lastOldestMessageId = msgs.last().id;
+
+            const lastMessage = msgs.last();
+            if (!lastMessage)
+                break;
+
+            lastOldestMessageId = lastMessage.id;
         }
 
         const msgArray = allMessages
             .filter(m => m.cleanContent.length > 0)
             .map(m => m.cleanContent);
 
-        console.log(msgArray);
+        console.log('GENERATING MARKOV CHAIN');
+
+        const chainData = Markov.markovDataFromMessages(msgArray);
+        const wohfMessage = Markov.messageFromMarkovData(chainData);
+        console.log(wohfMessage);
+
+        msg.channel.send(wohfMessage);
     }
 });
 

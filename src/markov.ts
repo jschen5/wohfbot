@@ -18,7 +18,7 @@ interface MarkovData {
     endWords: string[],
 }
 
-function markovDataFromMessages(messages: string[]): MarkovData {
+export function markovDataFromMessages(messages: string[]): MarkovData {
     const tokenToNextTokens = {};
     const startWords = [];
     const endWords = [];
@@ -72,7 +72,7 @@ function markovDataFromMessages(messages: string[]): MarkovData {
     return { markovChain, startWords, endWords };
 }
 
-function messageFromMarkovData(markovData: MarkovData): string {
+export function messageFromMarkovData(markovData: MarkovData): string {
     const { markovChain, startWords, endWords } = markovData;
 
     // First choose a random start word.
