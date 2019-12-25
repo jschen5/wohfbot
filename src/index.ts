@@ -42,8 +42,8 @@ client.on('message', async msg => {
         }
 
         const msgArray = allMessages
-            .filter(m => m.cleanContent.length > 0)
-            .map(m => m.cleanContent);
+            .filter(m => m.content.length > 0)
+            .map(m => m.content);
 
         console.log('GENERATING MARKOV CHAIN');
 
