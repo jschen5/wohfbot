@@ -4,7 +4,7 @@
   "description": "I is Wohf. Nice is meet you.",
   "main": "index.js",
   "scripts": {
-    "app": "node build/index.js",
+    "start": "node build/index.js",
     "debug": "node --inspect-brk build/index.js",
     "build": "tsc",
     "build:watch": "tsc -w",
@@ -27,6 +27,7 @@
   "dependencies": {
     "@types/node": "^13.1.0",
     "discord.js": "^11.5.1",
+    "dotenv": "^8.2.0",
     "typescript": "^3.7.4"
   }
 }

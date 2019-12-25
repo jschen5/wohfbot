@@ -1,6 +1,11 @@
 import * as Discord from 'discord.js';
 import * as Markov from './markov';
-const discordConfig = require('../discord.json');
+
+if (!process.env.DISCORD_TOKEN) {
+    require('dotenv').config();
+}
+
+const discordToken = process.env.DISCORD_TOKEN;
 
 const client = new Discord.Client();
 
@@ -55,4 +60,4 @@ client.on('message', async msg => {
     }
 });
 
-client.login(discordConfig.token);
+client.login(discordToken);
