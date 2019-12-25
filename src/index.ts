@@ -22,7 +22,7 @@ client.on('message', async msg => {
         msg.reply('wohf pong');
     }
 
-    if (msg.content.match(/^What would .+ say\??$/)) {
+    if (msg.content.match(/^What would .+ say\??$/i)) {
         const targetUser = msg.mentions.users.first();
         let allMessages = new Discord.Collection<string, Discord.Message>();
 
