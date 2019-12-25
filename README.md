@@ -1,4 +1,4 @@
 # wohfbot
 I is Wohf. Nice is meet you.
 
-copy `discord.sample.json` to `discord.json` and replace with real bot token
+To run locally, copy `.env.example` to `.env` and replace the placeholder with the real bot token.
